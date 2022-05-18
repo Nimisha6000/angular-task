@@ -1,0 +1,38 @@
+<form #form="ngForm">
+
+  <input type="email" name="email" placeholder="enter email" ngModel>
+  <br><br>
+  <input type="text" name="first_name" placeholder="enter first_name" ngModel>
+  <br><br>
+  <input type="text" name="last_name" placeholder="enter last_name" ngModel>
+  <br><br>
+  <input type="file" name="avatar" placeholder="enter avatar" ngModel>
+
+  <br>
+  <br>
+  <button (click)="adddemo(form.value)">Submit</button>
+</form>
+<br>
+<br>
+<table border="1">
+  <thead>
+    <tr>
+    <td>email</td>
+    <td>first_name</td>
+    <td>last_name</td>
+    <td>avatar</td>
+    <td>Action</td>
+    </tr>
+  </thead>
+  <tbody>
+   
+    <tr *ngFor="let detail of allData">
+     
+      <td>{{detail.email}}</td>
+      <td>{{detail.first_name}}</td>
+      <td>{{detail.last_name}}</td>
+      <td>{{detail.avatar}}</td>
+    </tr>
+ 
+  </tbody>
+</table>
